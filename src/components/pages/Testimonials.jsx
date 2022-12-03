@@ -4,6 +4,7 @@ import {testimonials} from "../data/dummydata"
 import  "slick-carousel/slick/slick.css"
 import  "slick-carousel/slick/slick-theme.css"
 import slider from "react-slick"
+// check commit
 
 export  const Testimonials = () => {
     return (
