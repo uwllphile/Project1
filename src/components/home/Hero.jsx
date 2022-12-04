@@ -10,11 +10,12 @@ export const Hero = () => {
                 <div className='heroContainer'>
                     <h3>{val.text}</h3>
                     <h1>
-                        <Typewriter options = {{ strings: [`${val.name}`, `${val.post}`, `${val.design}`],
+                        <Typewriter options = {{ strings: [`${val.name}`,`${val.post}`,`${val.design}`],
                         autoStart: true, loop: true}}/>
                     </h1>
+                    <p>{val.desc}</p>
+                    <button className='primaryBtn'>Download CV</button> 
                 </div>
-                
             ))}
         </section>
         </>
