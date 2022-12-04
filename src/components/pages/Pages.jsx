@@ -4,7 +4,7 @@ import { Header } from "../common/Header"
 import { Home } from "../home/Home"
 
 export const Pages = () => {
-    return (
+    return ( 
         <> 
         <Router>
             <Header/> 
