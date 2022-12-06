@@ -2,6 +2,7 @@ import { List } from "@mui/material"
 import  React, { useState } from "react"
 import {Visibility} from "@mui/icons-material";
 import {portfolio} from "../data/dummydata";
+
 import {Heading} from "../common/Heading";
 
 const allCategory = ['all', ...new Set(portfolio.map((item) => item.category))]
@@ -23,15 +24,14 @@ export  const Portfolio = () => {
           <Heading title='Portfolio'/>
         <div className='catButton'>
             {category.map((category) => (
-                <button className="primaryBtn" onClick={() => filterItems(category)}>{}</button>
+                <button className="primaryBtn" onClick={() => filterItems(category)}>{category}</button>
             ))}
         </div>
-      </div>
-      <div className='content grid-3'>
-          {List.map((items) =>(
+      <div className='content grid3'>
+          { list.map((items) =>(
               <div className='box'>
                   <div className='img'>
-                      <img src="{items.cover}" alt=""/>
+                      <img src={items.cover} alt=""/>
                   </div>
                   <div className="overlay">
                       <h3>{items.title}</h3>
@@ -40,6 +40,7 @@ export  const Portfolio = () => {
                   </div>
               </div>
           ))}
+      </div>
       </div>
   </article>
   </>)

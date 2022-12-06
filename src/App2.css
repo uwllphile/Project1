@@ -1,3 +1,16 @@
+.grid3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+}
+
+.grid4 {
+    grid-template-columns: repeat(4, 1fr);
+    height: 50vh;
+    place-items: center;
+    text-align: center;
+}
+
 /*Counter*/
 .counter{
     margin-top: 80px;
@@ -12,4 +25,207 @@
 .counter h1{
     margin: 0;
     font-size: 30px;
+}
+/*end counter*/
+
+/*article*/
+article{
+    margin-top: 50px;
+    margin-bottom: 80px;
+
+}
+
+article img{
+    width: 100%;
+    height: 100%;
+}
+
+article .box {
+    position: relative;
+    transition: 0.5s;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: 0.5s;
+    z-index: 2;
+    opacity: 0;
+}
+.overlay::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primaryColor);
+    opacity: 0;
+    transition: 0.5s;
+    z-index: -1;
+}
+article .box:hover .overlay,
+article .box:hover .overlay::after{
+    opacity: 1;
+}
+
+.catButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+}
+
+.catButton button {
+    text-transform: capitalize;
+    margin-right: 20px;
+}
+
+/*end article*/
+
+/*testimonials*/
+.testimonials{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.testimonials::after {
+    background-image: url("../public/images/testimonials-bg.png");
+}
+
+.testimonials .box {
+    max-width: 50%;
+    margin: auto;
+
+}
+
+.testimonials i {
+    background-color: var(--white);
+    font-size: 20px;
+    padding: 15px;
+    display: inline-block;
+    color: var(--primaryColor);
+}
+
+.testimonials .img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    border-radius: 50px;
+    border: 3px solid var(--primaryColor);
+}
+
+.testimonials img {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    border-radius: 50px;
+    background-size: cover;
+    object-fit: cover;
+
+}
+
+label {
+    color: var(--primaryColor);
+    margin: 10px;
+    display: inline-block;
+}
+/*end testimonials*/
+/*blog*/
+.blog img {
+    width: 100%;
+}
+
+.blog .box {
+    background-color: var(--primaryBackground);
+    border-radius: 10px;
+}
+.blog .text {
+    padding: 10px 30px;
+}
+/*end blog*/
+
+/*contact*/
+.contact {
+    margin: 20px 0;
+}
+
+.contact .right,
+.contact .right {
+    padding: 20px;
+}
+
+.contact .flex input:nth-child(1){
+    margin-right: 10px;
+
+}
+
+.contact button,
+.contact textarea,
+.contact input {
+    width: 100%;
+    padding: 20px;
+    border: none;
+    outline: none;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+/*end contact*/
+
+/*footer*/
+footer {
+    text-align: center;
+    background-color: var(--primaryBackground);
+    padding: 7px;
+    margin-top: 50px;
+}
+footer i {
+    margin: 5px;
+    color: var(--primaryColor);
+    
+}
+/*end footer*/
+@media screen and (max-width: 768px) {
+    .hero {
+        height: 60vh;
+    }
+    .heroContainer{
+        max-width: 80%;
+    }
+    .hero::after{
+        height: 60vh;
+    }
+
+    section {
+        height: auto;
+        padding-top: 50px;
+    }
+
+    .contact .flexsb,
+    .about .flex {
+        flex-direction: column;
+    }
+
+    .left ,
+    .right {
+        width: 100%;
+    }
+
+    .grid3,
+    .grid4 {
+        grid-template-columns: repeat(2,1fr);
+    }
 }
