@@ -1,11 +1,14 @@
-import  React from "react"
+import { List } from "@mui/material"
+import  React, { useState } from "react"
 import {Visibility} from "@mui/icons-material";
+import {portfolio} from "../data/dummydata";
+import {Heading} from "../common/Heading";
 
 const allCategory = ['all', ...new Set(portfolio.map((item) => item.category))]
 export  const Portfolio = () => {
 
-    const [list, setList] = userState(portfolio)
-    const [category, setCategory] = userState(allCategory)
+    const [list, setList] = useState(portfolio)
+    const [category, setCategory] = useState(allCategory)
     const  filterItems  = (category) => {
         const newItems = portfolio.filter((item) => item.category === category)
         setList(newItems)
@@ -13,10 +16,11 @@ export  const Portfolio = () => {
             setList(portfolio)
         }
     }
-  return (<>
+  return (
+      <>
   <article>
       <div className='container'>
-          <Heading title='Porfolio'/>
+          <Heading title='Portfolio'/>
         <div className='catButton'>
             {category.map((category) => (
                 <button className="primaryBtn" onClick={() => filterItems(category)}>{}</button>

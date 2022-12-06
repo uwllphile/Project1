@@ -4,14 +4,16 @@ import { Header } from "../common/Header"
 import { Home } from "../home/Home"
 import { Services } from "./Services"
 import { About } from "./About"
+import {Portfolio} from "./Portfolio";
 
 export const Pages = () => {
-    return ( 
-        <> 
+    return (
+        <>
         <Router>
-            <Header/> 
+            <Header/>
             <Switch>
                 <Route exact path='/' component={Home}/>
+                <Route exact path='/portfolio' component={Portfolio}/>
                 <Route exact path='/about' component={About}/>
                 <Route exact path='/services' component={Services}/>
             </Switch>
